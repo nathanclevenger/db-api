@@ -1,0 +1,45 @@
+{
+  "name": "db-api",
+  "version": "0.1.0",
+  "description": "Simple Database Abstraction & API",
+  "keywords": [
+    "database",
+    "api",
+    "abstraction"
+  ],
+  "homepage": "https://github.com/nathanclevenger/db-api",
+  "bugs": {
+    "url": "https://github.com/nathanclevenger/db-api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanclevenger/db-api.git"
+  },
+  "license": "MIT",
+  "author": "Nathan Clevenger (https://github.com/nathanclevenger)",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@types/json-schema": "^7.0.11",
+    "ava": "^5.2.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  }
+}
