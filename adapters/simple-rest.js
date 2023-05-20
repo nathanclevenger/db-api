@@ -10,10 +10,10 @@ export default (api, db) => {
 }
 
 getQuery = query => {
-  const { filter, sort, limit, offset } = query
-  const filterFn = filter ? new Function('item', `return ${filter}`) : () => true
-  const sortFn = sort ? new Function('a', 'b', `return ${sort}`) : () => 0
-  return { filterFn, sortFn, limit, offset }
+  const { q, ...filter } = JSON.parse(query?.filter)
+  const [ sort, order ] = JSON.parse(query?.sort)
+  const [ offset = 0, end = 99 ] =  JSON.parse(query?.range)
+  return { q, filter, offset, limit: end - offset + 1, sort, order: order?.toLowerCase() }
 }
 
 const newId = () => Math.random().toString(36).substring(2, 9)

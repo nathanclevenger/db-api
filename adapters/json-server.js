@@ -10,8 +10,8 @@ export default (api, db) => {
 }
 
 getQuery = query => {
-  const { _sort, _order, _start, _end, q, ...filter } = query
-  return { q, filter, offset: _start, limit: _end - _start, sort: _sort, order: _order?.toLowerCase() }
+  const { _sort, _order, _start = 0, _end = 99, q, ...filter } = query
+  return { q, filter, offset: _start, limit: _end - _start + 1, sort: _sort, order: _order?.toLowerCase() }
 }
 
 const newId = () => Math.random().toString(36).substring(2, 9)
