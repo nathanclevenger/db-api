@@ -9,7 +9,7 @@ export type Resource<T> = {
   name: string
   schema?: JSONSchema7
   // list: (options: ListOptions<T>) => Promise<T[]> IterableIterator
-  list: (options: ListOptions<T>) => Promise<IterableIterator<T>>
+  list: (options?: ListOptions<T>) => Promise<IterableIterator<T>>
   get: (id: string) => Promise<T>
   set: (id: string, value: any) => Promise<T>
   delete: (id: string) => Promise<T>
