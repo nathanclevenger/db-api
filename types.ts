@@ -12,7 +12,9 @@ export type Resource<T> = {
   list: (options?: ListOptions<T>) => Promise<IterableIterator<T>>
   get: (id: string) => Promise<T>
   set: (id: string, value: any) => Promise<T>
+  has: (id: string) => Promise<boolean>
   delete: (id: string) => Promise<T>
+  clear: () => Promise<void>
 }
 
 export type ListOptions<T> = {
